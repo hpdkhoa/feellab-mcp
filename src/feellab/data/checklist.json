@@ -1,0 +1,783 @@
+{
+ "about": "The FPS feel checklist: every interaction a player has with a first-person shooter and what they should get from it. Items with measures are checked from a probe's timeline; the others by a person.",
+ "groups": {
+  "A": "Shooting (your own gun)",
+  "B": "Hitting (your bullets land)",
+  "C": "Getting hit (damage taken)",
+  "D": "Movement and the body",
+  "E": "Interacting with the world",
+  "F": "Enemies (zombies)",
+  "G": "Explosions, fire and the world",
+  "H": "Sound mix",
+  "I": "Screen and comfort",
+  "J": "Smoothness (feel breaks when the frame does)"
+ },
+ "items": [
+  {
+   "id": "A1",
+   "group": "A",
+   "name": "Trigger to shot",
+   "expect": "The shot leaves on the same frame as the press; no input delay",
+   "measures": [
+    "feel.input_shot_ms"
+   ],
+   "check": "measured"
+  },
+  {
+   "id": "A2",
+   "group": "A",
+   "name": "Muzzle flash",
+   "expect": "A flash for one or two frames, scaled by the gun and the suppressor",
+   "measures": [
+    "feel.shot_flash_ms"
+   ],
+   "check": "measured"
+  },
+  {
+   "id": "A3",
+   "group": "A",
+   "name": "Muzzle light",
+   "expect": "A short light on the hands and the world",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "A4",
+   "group": "A",
+   "name": "Shot sound",
+   "expect": "Layered: the report, the mechanism, a tail that changes indoors and outdoors",
+   "measures": [
+    "feel.shot_sound_ms",
+    "feel.av_sync_ms"
+   ],
+   "check": "measured"
+  },
+  {
+   "id": "A5",
+   "group": "A",
+   "name": "Visual recoil",
+   "expect": "The gun kicks back and up, then settles, by the cartridge's energy",
+   "measures": [
+    "feel.kick_deg"
+   ],
+   "check": "measured"
+  },
+  {
+   "id": "A6",
+   "group": "A",
+   "name": "View climb",
+   "expect": "The aim climbs and partly recovers; a pattern the player can learn",
+   "measures": [
+    "feel.kick_recover_s"
+   ],
+   "check": "measured"
+  },
+  {
+   "id": "A7",
+   "group": "A",
+   "name": "Camera shake on the shot",
+   "expect": "A small, short shake, larger for big calibres",
+   "measures": [
+    "feel.shot_shake_deg"
+   ],
+   "check": "measured"
+  },
+  {
+   "id": "A8",
+   "group": "A",
+   "name": "Shell ejection",
+   "expect": "A case flies from the port, with a sound when it lands",
+   "measures": [
+    "feel.shell_share"
+   ],
+   "check": "measured"
+  },
+  {
+   "id": "A9",
+   "group": "A",
+   "name": "Smoke and heat",
+   "expect": "Smoke from the muzzle after a burst; heat shimmer on a hot barrel",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "A10",
+   "group": "A",
+   "name": "Tracers",
+   "expect": "Tracer rounds burn their colour",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "A11",
+   "group": "A",
+   "name": "Crosshair or spread feedback",
+   "expect": "The spread opens while firing and moving, closes at rest",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "A12",
+   "group": "A",
+   "name": "Aim down sights",
+   "expect": "A smooth zoom, a time to aim by weight, sway while aimed",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "A13",
+   "group": "A",
+   "name": "Dry fire",
+   "expect": "A click on an empty chamber",
+   "measures": [
+    "feel.dry_click"
+   ],
+   "check": "measured"
+  },
+  {
+   "id": "A14",
+   "group": "A",
+   "name": "Last round",
+   "expect": "The bolt locks back; a different sound",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "A15",
+   "group": "A",
+   "name": "Fire mode switch",
+   "expect": "A click and the selector moves",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "A16",
+   "group": "A",
+   "name": "Jam",
+   "expect": "A dead trigger, a different click, a clear action to clear it",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "A17",
+   "group": "A",
+   "name": "Reload sounds",
+   "expect": "Each sound on its animation beat, not on a timer",
+   "measures": [
+    "feel.reload_sounds"
+   ],
+   "check": "measured"
+  },
+  {
+   "id": "A18",
+   "group": "A",
+   "name": "Reload cancel",
+   "expect": "Sprinting or firing stops a reload at a real point",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "A19",
+   "group": "A",
+   "name": "Weapon switch",
+   "expect": "A draw time by weight, a sound, a holster sound",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "B1",
+   "group": "B",
+   "name": "World impact effect",
+   "expect": "Dust, sparks or splinters by the surface hit",
+   "measures": [
+    "feel.impact_fx_share",
+    "feel.debug_draws"
+   ],
+   "check": "measured"
+  },
+  {
+   "id": "B2",
+   "group": "B",
+   "name": "Impact sound",
+   "expect": "A sound by surface: concrete, metal, wood, dirt, flesh",
+   "measures": [
+    "feel.impact_sound_share"
+   ],
+   "check": "measured"
+  },
+  {
+   "id": "B3",
+   "group": "B",
+   "name": "Bullet holes",
+   "expect": "A mark that stays a while, by surface",
+   "measures": [
+    "feel.decal_share"
+   ],
+   "check": "measured"
+  },
+  {
+   "id": "B4",
+   "group": "B",
+   "name": "Surface types",
+   "expect": "Physical materials on the world, so B1 to B3 know what was hit",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "B5",
+   "group": "B",
+   "name": "Hit marker",
+   "expect": "A mark at the crosshair, the moment the server confirms",
+   "measures": [
+    "feel.marker_ms"
+   ],
+   "check": "measured"
+  },
+  {
+   "id": "B6",
+   "group": "B",
+   "name": "Hit sound",
+   "expect": "A short sound with the marker",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "B7",
+   "group": "B",
+   "name": "Kill confirmation",
+   "expect": "A different marker and sound for a kill",
+   "measures": [
+    "feel.kill_marker"
+   ],
+   "check": "measured"
+  },
+  {
+   "id": "B8",
+   "group": "B",
+   "name": "Headshot",
+   "expect": "A distinct marker or sound, and a distinct reaction",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "B9",
+   "group": "B",
+   "name": "Target reaction",
+   "expect": "The zombie flinches or staggers, more for a bigger round, by the hit's side",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "B10",
+   "group": "B",
+   "name": "Blood on hit",
+   "expect": "Spray from the wound, away from the shot",
+   "measures": [
+    "feel.blood_share"
+   ],
+   "check": "measured"
+  },
+  {
+   "id": "B11",
+   "group": "B",
+   "name": "Death",
+   "expect": "The body falls from the shot's push (ragdoll with impulse)",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "B12",
+   "group": "B",
+   "name": "Penetration",
+   "expect": "A round through a wall or a body shows on the far side",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "B13",
+   "group": "B",
+   "name": "Ricochet",
+   "expect": "Sparks and a whine off metal at a shallow angle",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "B14",
+   "group": "B",
+   "name": "Armour hit",
+   "expect": "Sparks and a clang on an armoured zombie",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "B15",
+   "group": "B",
+   "name": "Melee impact",
+   "expect": "A short hit-stop, a shake, a sound by what was struck",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "C1",
+   "group": "C",
+   "name": "Damage direction",
+   "expect": "An indicator pointing to where the hit came from",
+   "measures": [
+    "feel.hurt_indicator"
+   ],
+   "check": "measured"
+  },
+  {
+   "id": "C2",
+   "group": "C",
+   "name": "Hit screen effect",
+   "expect": "Blood at the screen's edge, more as health drops",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "C3",
+   "group": "C",
+   "name": "Flinch",
+   "expect": "The view jerks, by the hit's size",
+   "measures": [
+    "feel.flinch_deg"
+   ],
+   "check": "measured"
+  },
+  {
+   "id": "C4",
+   "group": "C",
+   "name": "Hit sound",
+   "expect": "The impact and the character's grunt",
+   "measures": [
+    "feel.hurt_sound"
+   ],
+   "check": "measured"
+  },
+  {
+   "id": "C5",
+   "group": "C",
+   "name": "Low health",
+   "expect": "Heartbeat, heavier breathing, a duller world",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "C6",
+   "group": "C",
+   "name": "Explosion near you",
+   "expect": "Shake by distance, ringing ears, muffled sound",
+   "measures": [
+    "feel.blast_shake_5_deg",
+    "feel.blast_falloff"
+   ],
+   "check": "measured"
+  },
+  {
+   "id": "C7",
+   "group": "C",
+   "name": "Bleeding",
+   "expect": "A clear sign the player is bleeding and how fast",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "C8",
+   "group": "C",
+   "name": "Fall damage",
+   "expect": "A heavy landing, a sound, a limp",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "C9",
+   "group": "C",
+   "name": "Downed",
+   "expect": "A clear screen state, what the player can do",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "D1",
+   "group": "D",
+   "name": "Footsteps",
+   "expect": "A step sound by surface and speed, quieter crouched",
+   "measures": [
+    "feel.footstep_rate"
+   ],
+   "check": "measured"
+  },
+  {
+   "id": "D2",
+   "group": "D",
+   "name": "Head bob",
+   "expect": "A small, real bob of the head with each step, optional",
+   "measures": [
+    "feel.headbob_cm"
+   ],
+   "check": "measured"
+  },
+  {
+   "id": "D3",
+   "group": "D",
+   "name": "Weapon sway and inertia",
+   "expect": "The gun lags the look a little, more for a heavy gun",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "D4",
+   "group": "D",
+   "name": "Landing",
+   "expect": "A dip of the camera and a sound, by the fall's height",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "D5",
+   "group": "D",
+   "name": "Sprint",
+   "expect": "The gun lowered, faster steps, breathing",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "D6",
+   "group": "D",
+   "name": "Crouch",
+   "expect": "A smooth camera move down, not a snap",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "D7",
+   "group": "D",
+   "name": "Lean",
+   "expect": "A smooth lean, the gun tilted",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "D8",
+   "group": "D",
+   "name": "Stamina",
+   "expect": "Breathing that grows heavier; aim that shakes when winded",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "D9",
+   "group": "D",
+   "name": "Vault and mantle",
+   "expect": "Hands on the ledge, a sound",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "D10",
+   "group": "D",
+   "name": "Turning with a heavy gun",
+   "expect": "Inertia by the gun's weight",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "D11",
+   "group": "D",
+   "name": "Bumping into the world",
+   "expect": "A small stop and a sound, not a slide",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "E1",
+   "group": "E",
+   "name": "Prompt",
+   "expect": "A short prompt when something can be used, at the right distance",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "E2",
+   "group": "E",
+   "name": "Pick up",
+   "expect": "A sound and a hand movement; the item in the inventory at once",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "E3",
+   "group": "E",
+   "name": "Loot crate",
+   "expect": "Opening sound and movement, items shown",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "E4",
+   "group": "E",
+   "name": "Doors",
+   "expect": "Open and close sounds, a push for zombies",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "E5",
+   "group": "E",
+   "name": "Inventory",
+   "expect": "Sounds for moving items, weight felt",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "E6",
+   "group": "E",
+   "name": "Healing",
+   "expect": "The bandage animation and sound, health back over time",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "E7",
+   "group": "E",
+   "name": "Dropped items",
+   "expect": "Fall with physics, a landing sound",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "F1",
+   "group": "F",
+   "name": "Attack wind-up",
+   "expect": "A visible and audible tell before a hit",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "F2",
+   "group": "F",
+   "name": "Their sounds",
+   "expect": "Groans by distance and direction, so the player hears them coming",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "F3",
+   "group": "F",
+   "name": "Spawning",
+   "expect": "Never in the player's view",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "F4",
+   "group": "F",
+   "name": "Reaction to noise",
+   "expect": "They turn to a shot; the player sees them turn",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "F5",
+   "group": "F",
+   "name": "Clear death",
+   "expect": "They stop and fall; no doubt whether they are dead",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "G1",
+   "group": "G",
+   "name": "Explosion",
+   "expect": "Flash, fireball, debris, smoke, a shake by distance",
+   "measures": [
+    "feel.blast_shake_5_deg",
+    "feel.blast_falloff"
+   ],
+   "check": "measured"
+  },
+  {
+   "id": "G2",
+   "group": "G",
+   "name": "Sound by distance",
+   "expect": "Far sounds later and duller",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "G3",
+   "group": "G",
+   "name": "Fire",
+   "expect": "Heat shimmer, crackle, light",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "G4",
+   "group": "G",
+   "name": "Physics props",
+   "expect": "Bottles, cans and boxes react to shots",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "G5",
+   "group": "G",
+   "name": "Glass",
+   "expect": "Breaks with a sound",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "H1",
+   "group": "H",
+   "name": "Indoor and outdoor",
+   "expect": "Reverb inside, a long tail outside",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "H2",
+   "group": "H",
+   "name": "Occlusion",
+   "expect": "Sounds behind walls muffled",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "H3",
+   "group": "H",
+   "name": "Priority",
+   "expect": "Your own gun is never drowned by ambience",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "H4",
+   "group": "H",
+   "name": "Ducking",
+   "expect": "An explosion pushes other sounds down for a moment",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "I1",
+   "group": "I",
+   "name": "Ammo awareness",
+   "expect": "The count shown, or felt by the magazine's weight (realism)",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "I2",
+   "group": "I",
+   "name": "Shake and bob settings",
+   "expect": "Sliders for shake and bob (motion sickness)",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "I3",
+   "group": "I",
+   "name": "Field of view",
+   "expect": "A setting, kept when aiming down sights",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "I4",
+   "group": "I",
+   "name": "Colour-blind markers",
+   "expect": "Hit and kill markers that read without red",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "J1",
+   "group": "J",
+   "name": "Frame time",
+   "expect": "No hitches on a shot, a hit, an explosion, a spawn",
+   "measures": [
+    "feel.hitch_fire",
+    "feel.hitch_blast"
+   ],
+   "check": "measured"
+  },
+  {
+   "id": "J2",
+   "group": "J",
+   "name": "Animation pops",
+   "expect": "No snaps between clips",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  },
+  {
+   "id": "J3",
+   "group": "J",
+   "name": "Co-op latency",
+   "expect": "Hit markers and impacts on the client feel instant",
+   "measures": [],
+   "check": "person",
+   "how": "a person checks it in the game against 'expect' (no timeline measure yet)"
+  }
+ ]
+}

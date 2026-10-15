@@ -1,0 +1,71 @@
+{
+ "about": "The standard scenes a probe plays, one timeline each (named <subject>_<scene>_timeline.json). Record from just before the cause to 1 s after.",
+ "scenes": {
+  "fire_wall": {
+   "do": "hold the trigger for 1 s with the weapon in hand, aimed at a flat wall 5 m ahead (the probe puts one there if the level has none), the player standing still, the gun full",
+   "params": {
+    "distance_m": 5,
+    "seconds": 1.0
+   }
+  },
+  "fire_zombie": {
+   "do": "fire at an enemy 8 m ahead until it dies (or 3 s), aimed at its chest",
+   "params": {
+    "distance_m": 8
+   }
+  },
+  "dry_fire": {
+   "do": "pull the trigger twice on an empty gun",
+   "params": {}
+  },
+  "reload": {
+   "do": "reload a magazine-fed gun from part full",
+   "params": {}
+  },
+  "hurt_front": {
+   "do": "the player takes one hit of 20 damage from straight ahead",
+   "params": {
+    "damage": 20,
+    "from_yaw": 0
+   }
+  },
+  "hurt_left": {
+   "do": "the player takes one hit of 20 damage from the left",
+   "params": {
+    "damage": 20,
+    "from_yaw": -90
+   }
+  },
+  "hurt_back": {
+   "do": "the player takes one hit of 20 damage from behind",
+   "params": {
+    "damage": 20,
+    "from_yaw": 180
+   }
+  },
+  "blast_5": {
+   "do": "a hand grenade goes off 5 m ahead of the player (doing no harm, for the test)",
+   "params": {
+    "distance_m": 5
+   }
+  },
+  "blast_15": {
+   "do": "a hand grenade goes off 15 m ahead",
+   "params": {
+    "distance_m": 15
+   }
+  },
+  "blast_50": {
+   "do": "a hand grenade goes off 50 m ahead",
+   "params": {
+    "distance_m": 50
+   }
+  },
+  "walk": {
+   "do": "walk forward for 3 s on level ground",
+   "params": {
+    "seconds": 3.0
+   }
+  }
+ }
+}

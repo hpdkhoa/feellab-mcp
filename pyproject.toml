@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "feellab-mcp"
+version = "0.1.0"
+description = "An MCP server that checks how a first-person shooter feels: an 82-item checklist of every interaction, a timeline contract any game's probe can write, and measures of latency, kick, shake, presence and smoothness."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Khoa Hoang" }]
+requires-python = ">=3.10"
+keywords = ["mcp", "game-feel", "fps", "game-development", "testing", "juice"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Topic :: Games/Entertainment",
+    "Topic :: Software Development :: Testing",
+]
+dependencies = ["mcp>=2.0,<3"]
+
+[project.urls]
+Homepage = "https://github.com/hpdkhoa/feellab-mcp"
+Issues = "https://github.com/hpdkhoa/feellab-mcp/issues"
+
+[project.scripts]
+feellab-mcp = "feellab.server:main"
+feellab = "feellab.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/feellab"]

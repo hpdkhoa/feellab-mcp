@@ -1,0 +1,28 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.hpdkhoa/feellab-mcp",
+  "title": "Feel Lab",
+  "description": "An FPS feel checklist, measured from a timeline any game's probe can write",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/hpdkhoa/feellab-mcp",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "feellab-mcp",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "FEELLAB_OUT",
+          "description": "The only folder Feel Lab writes to (its reports); defaults to ~/.feellab",
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}
