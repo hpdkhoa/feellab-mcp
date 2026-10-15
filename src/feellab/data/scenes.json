@@ -19,7 +19,7 @@
    "params": {}
   },
   "reload": {
-   "do": "reload a magazine-fed gun from part full",
+   "do": "reload until the gun is loaded: a magazine, or a tube one round at a time; record to the last sound",
    "params": {}
   },
   "hurt_front": {

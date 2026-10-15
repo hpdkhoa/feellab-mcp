@@ -184,13 +184,24 @@ def count(tl, kind, tag=None, rules=None):
     return len(events(tl, kind, tag, rules))
 
 
-def per_cause(tl, cause_kind, cause_tag, answer_kind, answer_tag, window_s=0.3, rules=None):
-    """The share of causes that got at least one answer within the window (1.0: every one)."""
-    causes = events(tl, cause_kind, cause_tag, rules)
+def per_cause(tl, cause_kind, cause_tag, answer_kind, answer_tag, window_s=0.3, rules=None, once=False):
+    """The share of causes that got at least one answer within the window (1.0: every one). once: each answer
+    serves one cause only, the earliest it can (a case per round: a pump gun throws it on the stroke, late, and one
+    case must not count for a burst)."""
+    causes = sorted(events(tl, cause_kind, cause_tag, rules), key=lambda e: e["t"])
     if not causes:
         return None
-    answers = [a["t"] for a in events(tl, answer_kind, answer_tag, rules)]
-    got = sum(1 for c in causes if any(c["t"] - 1e-6 <= a <= c["t"] + window_s for a in answers))
+    answers = sorted(a["t"] for a in events(tl, answer_kind, answer_tag, rules))
+    if not once:
+        got = sum(1 for c in causes if any(c["t"] - 1e-6 <= a <= c["t"] + window_s for a in answers))
+        return round(got / len(causes), 3)
+    got, i = 0, 0
+    for c in causes:
+        while i < len(answers) and answers[i] < c["t"] - 1e-6:
+            i += 1
+        if i < len(answers) and answers[i] <= c["t"] + window_s:
+            got += 1
+            i += 1
     return round(got / len(causes), 3)
 
 

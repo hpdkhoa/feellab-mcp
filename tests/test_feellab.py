@@ -100,3 +100,14 @@ def test_a_project_names_its_own_sounds(tmp_path):
     assert MX.value("feel.dry_click", E.load_folder(tmp_path)["G"]) == 0
     (tmp_path / "feel_rules.json").write_text(json.dumps({"dry": "slidelock"}))
     assert MX.value("feel.dry_click", E.load_folder(tmp_path)["G"]) == 1
+
+
+def test_shell_pairs_each_shot_once():
+    from feellab import measure as M
+    ev = [{"t": 0.0, "kind": "shot", "name": "s"}, {"t": 0.1, "kind": "shot", "name": "s"},
+          {"t": 0.12, "kind": "fx", "name": "case", "tags": ["shell"]}]
+    tl = {"frames": [], "events": ev}
+    assert M.per_cause(tl, "shot", None, "fx", "shell") == 1.0          # one case answers both shots
+    assert M.per_cause(tl, "shot", None, "fx", "shell", window_s=1.0, once=True) == 0.5
+    pump = {"frames": [], "events": [{"t": 0.0, "kind": "shot", "name": "s"}, {"t": 0.6, "kind": "fx", "name": "c", "tags": ["shell"]}]}
+    assert M.per_cause(pump, "shot", None, "fx", "shell", window_s=1.0, once=True) == 1.0

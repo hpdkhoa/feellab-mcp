@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1
+
+* **Shell ejection** pairs each shot with its own case, within a second. A pump or bolt gun throws its case on the
+  hand stroke, after the old 0.3 s window, and one case no longer counts for a whole burst.
+* **The reload scene** records until the gun is loaded, a tube gun one round at a time.
+
 ## 0.1.0
 
 The first release, built for ToangTown (2026-10-15).

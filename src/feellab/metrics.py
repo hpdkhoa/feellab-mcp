@@ -53,7 +53,7 @@ METRICS = {
     "feel.kick_deg": ("fire_wall", _kick_fire, "deg", "none", (">=", 0.3), "a rifle's recoil turns the view; under 0.3 degrees the player does not see it (estimate)", True),
     "feel.kick_recover_s": ("fire_wall", _kick_back, "s", "lower", ("<=", 0.6), "the view settles within about a cycle of a rifle's rhythm of fire (estimate)", True),
     "feel.shot_shake_deg": ("fire_wall", _shake_fire, "deg", "none", (">=", 0.02), SHAKE + "; any shake at all on a shot (estimate of what is seen)", True),
-    "feel.shell_share": ("fire_wall", lambda tl: M.per_cause(tl, "shot", None, "fx", "shell"), "share", "higher", ("==", 1.0), "every round fired ejects a case", False),
+    "feel.shell_share": ("fire_wall", lambda tl: M.per_cause(tl, "shot", None, "fx", "shell", window_s=1.0, once=True), "share", "higher", ("==", 1.0), "every round fired ejects a case (by hand on a pump or bolt gun: within a second)", False),
     "feel.impact_fx_share": ("fire_wall", lambda tl: M.per_cause(tl, "impact", None, "fx", "impact"), "share", "higher", ("==", 1.0), "a round striking a wall throws dust, chips or sparks", False),
     "feel.impact_sound_share": ("fire_wall", lambda tl: M.per_cause(tl, "impact", None, "sound", "impact"), "share", "higher", ("==", 1.0), "a round striking a wall is heard", False),
     "feel.decal_share": ("fire_wall", lambda tl: M.per_cause(tl, "impact", None, "decal", None), "share", "higher", ("==", 1.0), "a round leaves a hole or a mark", False),
