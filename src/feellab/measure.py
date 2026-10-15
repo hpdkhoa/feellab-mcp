@@ -103,9 +103,11 @@ def av_sync(tl, rules=None):
 
 
 # ------------------------------------------------------------------ the camera
-def kick(tl, start=None, end=None):
+def kick(tl, start=None, end=None, reach=0.0):
     """The camera's turn away from where it started, over a span: (the peak in degrees, the seconds it takes to come
-    back within a tenth of that peak after the span ends; None when it does not come back)."""
+    back within a tenth of that peak after the span ends; None when it does not come back). reach: the peak is
+    looked for this long past the span too, and the way back starts after it (one shot is a span of no length; its
+    kick lands a frame or a few later)."""
     cam = _cam(tl)
     if len(cam) < 3:
         return None, None
@@ -116,10 +118,10 @@ def kick(tl, start=None, end=None):
 
     def off(c):
         return math.hypot(_ang(base[3], c[3]), _ang(base[4], c[4]))
-    peak = max((off(c) for t, c in cam if t0 <= t <= t1), default=0.0)
+    peak = max((off(c) for t, c in cam if t0 <= t <= t1 + reach), default=0.0)
     if peak <= 1e-3:
         return 0.0, None                                              # no kick: nothing to come back from
-    back = next((t - t1 for t, c in cam if t > t1 and off(c) <= 0.1 * peak), None)
+    back = next((t - t1 for t, c in cam if t > t1 + reach and off(c) <= 0.1 * peak), None)
     return round(peak, 3), (round(back, 3) if back is not None else float("inf"))     # inf: it never came back
 
 

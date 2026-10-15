@@ -25,12 +25,12 @@ def _shake_scene(tl):
 
 def _kick_fire(tl):
     a, b = _span(tl, "shot")
-    return M.kick(tl, a, b)[0] if a is not None else None
+    return M.kick(tl, a, b, reach=0.25)[0] if a is not None else None
 
 
 def _kick_back(tl):
     a, b = _span(tl, "shot")
-    return M.kick(tl, a, b)[1] if a is not None else None
+    return M.kick(tl, a, b, reach=0.25)[1] if a is not None else None
 
 
 def _shake_fire(tl):

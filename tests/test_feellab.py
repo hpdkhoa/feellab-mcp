@@ -111,3 +111,11 @@ def test_shell_pairs_each_shot_once():
     assert M.per_cause(tl, "shot", None, "fx", "shell", window_s=1.0, once=True) == 0.5
     pump = {"frames": [], "events": [{"t": 0.0, "kind": "shot", "name": "s"}, {"t": 0.6, "kind": "fx", "name": "c", "tags": ["shell"]}]}
     assert M.per_cause(pump, "shot", None, "fx", "shell", window_s=1.0, once=True) == 1.0
+
+
+def test_kick_of_one_shot():
+    from feellab import metrics as MX
+    fr = [{"t": 0.0, "dt": 16, "cam": [0, 0, 0, 0, 0, 0, 90]}, {"t": 0.05, "dt": 16, "cam": [0, 0, 0, 3.0, 0, 0, 90]},
+          {"t": 0.6, "dt": 16, "cam": [0, 0, 0, 0.1, 0, 0, 90]}]
+    tl = {"frames": fr, "events": [{"t": 0.0, "kind": "shot", "name": "s"}]}
+    assert MX.METRICS["feel.kick_deg"][1](tl) == 3.0
