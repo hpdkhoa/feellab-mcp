@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.2
+
+* **Hitches** count a frame when any of it falls in the window round the event. A frame is stamped when it ends: a
+  0.27 s frame that started at a shot ended past the 0.25 s window and was missed.
+
 ## 0.1.1
 
 * **Shell ejection** pairs each shot with its own case, within a second. A pump or bolt gun throws its case on the

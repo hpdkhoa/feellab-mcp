@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "feellab-mcp"
-version = "0.1.1"
+version = "0.1.2"
 description = "An MCP server that checks how a first-person shooter feels: an 82-item checklist of every interaction, a timeline contract any game's probe can write, and measures of latency, kick, shake, presence and smoothness."
 readme = "README.md"
 license = "MIT"

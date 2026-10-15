@@ -119,3 +119,10 @@ def test_kick_of_one_shot():
           {"t": 0.6, "dt": 16, "cam": [0, 0, 0, 0.1, 0, 0, 90]}]
     tl = {"frames": fr, "events": [{"t": 0.0, "kind": "shot", "name": "s"}]}
     assert MX.METRICS["feel.kick_deg"][1](tl) == 3.0
+
+
+def test_hitch_counts_a_long_frame_that_starts_at_the_shot():
+    from feellab import measure as M
+    fr = [{"t": 0.01 * i, "dt": 10, "cam": [0] * 7} for i in range(1, 8)] + [{"t": 0.35, "dt": 270, "cam": [0] * 7}]
+    tl = {"frames": fr, "events": [{"t": 0.07, "kind": "shot", "name": "s"}]}
+    assert M.hitch(tl, "shot") == 27.0

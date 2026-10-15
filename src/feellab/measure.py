@@ -218,7 +218,9 @@ def rate(tl, kind, tag=None, rules=None):
 
 # ------------------------------------------------------------------ smoothness
 def hitch(tl, around_kind=None, window_s=0.25):
-    """The longest frame against the median frame (1.0: even), over the scene or round one kind of event."""
+    """The longest frame against the median frame (1.0: even), over the scene or round one kind of event. A frame
+    counts when any of it falls in the window: a frame is stamped when it ends, and a long one that starts at the
+    event ends well after it."""
     frames = tl.get("frames", [])
     if len(frames) < 5:
         return None
@@ -227,7 +229,7 @@ def hitch(tl, around_kind=None, window_s=0.25):
         ts = [e["t"] for e in tl.get("events", []) if e.get("kind") == around_kind]
         if not ts:
             return None
-        sel = [f["dt"] for f in frames if any(abs(f["t"] - t) <= window_s for t in ts)]
+        sel = [f["dt"] for f in frames if any(f["t"] - f["dt"] / 1000.0 <= t + window_s and f["t"] >= t - window_s for t in ts)]
     else:
         sel = [f["dt"] for f in frames]
     return round(max(sel) / med, 3) if sel else None
